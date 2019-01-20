@@ -1,4 +1,4 @@
-# Cause-animale
+# A2L project : Serveur
 Voici le github de la partie BackEnd des applications A2L. 
 Le serveur sera codé en PHP et associé à du MySQL. 
 Il sera dédié et entierment controllé par les 2 applications. Autant en tant que lecture que d'écriture.
