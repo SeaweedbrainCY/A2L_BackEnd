@@ -39,6 +39,7 @@ if($infos['Mdp'] != "" && $infos['Mdp'] != "none" && ($infos['Statut'] != "Membr
 			$row['Nom'] = $donnees['Nom'];
 			$row['Statut'] = $donnees['Statut'];
 			$row['DateNaissance'] = $donnees['DateNaissance'];
+			$row['URLimg'] = $donnees['URLimg'];
 
 			//on ajoute le dictionnaire au tableau général
 			$entireArray[] = $row;
@@ -50,11 +51,11 @@ if($infos['Mdp'] != "" && $infos['Mdp'] != "none" && ($infos['Statut'] != "Membr
 
 		$reponse -> closeCursor();
 	} else { // Les infromations sont cohérentes mais le mot de passe est faux
-		?>Mdp incorrect<?php
+		?>"Mdp incorrect"<?php
 	}
 	
 } else { // Les infromations ne sont pas bonnes
-	?>Autorisation refusée<?php
+	?>"Autorisation refusée"<?php
 }
 
 
