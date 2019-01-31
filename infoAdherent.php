@@ -18,7 +18,6 @@ $nom = $_GET['Nom'];//On récupère le nom associé
 $dateNaissance = $_GET['DateNaissance'];//Et on récupère le HASH su mot de passe associé.
 
 
-
 $checkInfo = $bdd->query('SELECT * FROM ListeAdherents WHERE Nom="'.$nom.'"');
 
 //On formatte les données récupérés
@@ -40,6 +39,7 @@ if($infos['Nom'] != "") { //Si on ne detecte aucun élève
 		$row['Nom'] = $donnesReponse['Nom'];
 		$row['Statut'] = $donnesReponse['Statut'];
 		$row['DateNaissance'] = $donnesReponse['DateNaissance'];
+		$row['URLimg'] = $donnesReponse['URLimg'];
 
 		$entireArray[] = $row;
 
