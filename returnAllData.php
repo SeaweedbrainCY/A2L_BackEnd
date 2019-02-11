@@ -21,7 +21,7 @@ $checkInfo = $bdd->query('SELECT * FROM ListeAdherents WHERE Nom="'.$nom.'"');
 $infos = $checkInfo->fetch();
 
 
-if($infos['Mdp'] != "" && $infos['Mdp'] != "none" && ($infos['Statut'] != "Membre du bureau" || $infos['Statut'] != "Super-admin")) { //Si on detecte un mot de passe et qu'il est bien renseigné, et que l'élève est bien accredité 
+if($infos['Mdp'] != "" && $infos['Mdp'] != "none" && ($infos['Statut'] != "Membre du bureau" || $infos['Statut'] != "Super-admin") || $infos['Statut'] != "Developpeur") { //Si on detecte un mot de passe et qu'il est bien renseigné, et que l'élève est bien accredité 
 	//La connexion est prête. Verification du mdp : 
 	if($infos['Mdp'] == $mdp) {
 		//On execute en MySQL pour atteindre la database voulue
@@ -40,6 +40,8 @@ if($infos['Mdp'] != "" && $infos['Mdp'] != "none" && ($infos['Statut'] != "Membr
 			$row['Statut'] = $donnees['Statut'];
 			$row['DateNaissance'] = $donnees['DateNaissance'];
 			$row['URLimg'] = $donnees['URLimg'];
+			$row['Classe'] = $donnees['Classe'];
+			$row['PointFidelite'] = $donnees['PointFidelite'];
 
 			//on ajoute le dictionnaire au tableau général
 			$entireArray[] = $row;
