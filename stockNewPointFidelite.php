@@ -14,5 +14,25 @@ catch(Exception $e)
 $id = $_POST['id']; // est totalement unique
 $pointFidelite = $_POST['PointFidelite'];
 
-$bdd->exec('UPDATE ListeAdherents SET PointFidelite = "'.$pointFidelite.'" WHERE id = "'.$id.'"');
+$idAdmin = $_POST['idAdmin'];
+$mdpAdmin = hash('sha256', $_POST['mdpAdmin']);
+
+$checkInfo = $bdd->query('SELECT * FROM ListeAdherents WHERE id="'.$idAdmin.'"');
+
+//On formatte les données récupérés
+$infos = $checkInfo->fetch();
+
+if($infos['Mdp'] != "" && $infos['Mdp'] != "none" && ($infos['Statut'] == "Membre du bureau" || $infos['Statut'] == "Super-admin" || $infos['Statut'] == "Développeur")) { //Si on detecte un mot de passe et qu'il est bien renseigné, et que l'élève est bien accredité 
+	//La connexion est prête. Verification du mdp : 
+	if($infos['Mdp'] == $mdpAdmin) {
+		$bdd->exec('UPDATE ListeAdherents SET PointFidelite = "'.$pointFidelite.'" WHERE id = "'.$id.'"');
+		//Ne peut être executé que par un admin/super-admin/developpeur
+	} else {
+		?>"Accès au serveur refusé"<?php
+	}
+} else {
+	?>"Accès au serveur refusé"<?php
+}
+
+
 ?>
