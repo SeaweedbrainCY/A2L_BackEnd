@@ -25,7 +25,7 @@ if($infos['Mdp'] != "" && $infos['Mdp'] != "none" && ($infos['Statut'] == "Membr
 	//La connexion est prête. Verification du mdp : 
 	if($infos['Mdp'] == $mdp) {
 		//On execute en MySQL pour atteindre la database voulue
-		$reponse = $bdd->query('SELECT * FROM ListeAdherents');
+		$reponse = $bdd->query('SELECT * FROM ListeAdherents ORDER BY Nom');
 
 
 		//Tableau total de la forme [[id:1, Nom: "nom",Statut = "adherent",DateNaissance: 2002-11-14], [id:2, Nom: "nom2",Statut = "adherent",DateNaissance: 2002-11-14]]
@@ -39,7 +39,6 @@ if($infos['Mdp'] != "" && $infos['Mdp'] != "none" && ($infos['Statut'] == "Membr
 			$row['Nom'] = $donnees['Nom'];
 			$row['Statut'] = $donnees['Statut'];
 			$row['DateNaissance'] = $donnees['DateNaissance'];
-			$row['URLimg'] = $donnees['URLimg'];
 			$row['Classe'] = $donnees['Classe'];
 			$row['PointFidelite'] = $donnees['PointFidelite'];
 
