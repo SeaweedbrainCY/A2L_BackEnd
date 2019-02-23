@@ -37,7 +37,6 @@ if($infos['Nom'] != "") { //Si on ne detecte aucun élève
 		$row['Nom'] = $donnesReponse['Nom'];
 		$row['Statut'] = $donnesReponse['Statut'];
 		$row['DateNaissance'] = $donnesReponse['DateNaissance'];
-		$row['URLimg'] = $donnesReponse['URLimg'];
 		$row['Classe'] = $donnesReponse['Classe'];
 		$row['PointFidelite'] = $donnesReponse['PointFidelite'];
 
