@@ -19,7 +19,7 @@ $donnesReponse = $reponse -> fetch();
 
 if($donnesReponse['Statut'] == "Membre du bureau" || $donnesReponse['Statut'] == "Développeur" || $donnesReponse['Statut'] == "Super-admin") { // On vérifie que le demandeur à bien le droit de demander
 	if($donnesReponse['CodeTemporaire'] != ""){
-		if(password_verify($mdpAdmin,$donnesReponse['CodeTemporaire'])) {
+		if(password_verify($code,$donnesReponse['CodeTemporaire'])) {
 			?>"Success"<?php
 		} else {
 			?>"Code temporaire faux"<?php

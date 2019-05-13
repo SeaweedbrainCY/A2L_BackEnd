@@ -16,6 +16,7 @@ $nom = $_POST['Nom'];//On récupère le nom associé
 $dateNaissance = $_POST['DateNaissance'];//Et on récupère le HASH su mot de passe associé.
 
 
+
 $checkInfo = $bdd->query('SELECT * FROM ListeAdherents WHERE Nom="'.$nom.'"');
 
 //On formatte les données récupérés
@@ -58,7 +59,6 @@ if($infos['Nom'] != "") { //Si on ne detecte aucun élève
 } else { // Les infromations ne sont pas bonnes
 	?>"Élève introuvable"<?php
 }
-
 
 
 ?>

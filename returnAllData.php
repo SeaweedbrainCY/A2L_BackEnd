@@ -12,8 +12,8 @@ catch(Exception $e)
 
 //Cette API n'est destinée qu'au membre du bureau. Ainsi sans le nom et le mot de passe elle ne revoie rien du tout
 //Données de l'URL :
-$nom = $_GET['Nom'];//On récupère le nom associé
-$mdp = $_GET['Mdp'];//Et on récupère le HASH su mot de passe associé.
+$nom = $_POST['Nom'];//On récupère le nom associé
+$mdp = $_POST['Mdp'];//Et on récupère le HASH su mot de passe associé.
 
 $checkInfo = $bdd->query('SELECT * FROM ListeAdherents WHERE Nom="'.$nom.'"');
 

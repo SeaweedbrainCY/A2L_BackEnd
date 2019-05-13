@@ -14,25 +14,10 @@ catch(Exception $e)
 $id = $_POST['id']; // est totalement unique
 $data = $_POST['data'];
 
-$idAdmin = $_POST['idAdmin'];
-$mdpAdmin = $_POST['mdpAdmin'];
 
-$checkInfo = $bdd->query('SELECT * FROM ListeAdherents WHERE id="'.$idAdmin.'"');
-
-//On formatte les données récupérés
-$infos = $checkInfo->fetch();
-
-if($infos['Mdp'] != "" && $infos['Mdp'] != "none" && ($infos['Statut'] == "Super-admin" || $infos['Statut'] == "Développeur")) { //Si on detecte un mot de passe et qu'il est bien renseigné, et que l'élève est bien accredité 
-	//La connexion est prête. Verification du mdp : 
-	if(password_verify($mdpAdmin, $infos['Mdp'])) {
 		$bdd->exec('UPDATE ListeAdherents SET ImageData = "'.$data.'" WHERE id = "'.$id.'"');
 		//Ne peut être executé que par un admin/super-admin/developpeur
-	} else {
-		?>"Accès au serveur refusé"<?php
-	}
-} else {
-	?>"Accès au serveur refusé"<?php
-}
+
 
 
 ?>

@@ -19,8 +19,8 @@ $reponse = $bdd->query('SELECT * FROM ListeAdherents WHERE id="'.$idAdherent.'"'
 
 $donnesReponse = $reponse -> fetch();
 
-if($donnesReponse['ImageData'] == ""){
-?>"Aucune données"<?php
+if($donnesReponse['ImageData'] == "none"){
+?>"none"<?php
 } else {
 ?>"<?php echo $donnesReponse['ImageData'];?>"<?php
 }
