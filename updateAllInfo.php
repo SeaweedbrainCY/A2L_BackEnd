@@ -42,7 +42,7 @@ if($infos['Mdp'] != "" && $infos['Mdp'] != "none" && ($infos['Statut'] == "Super
 		?>"Accès au serveur refusé"<?php
 	}
 } else {
-	?>"Accès au serveur refusé1"<?php
+	?>"Accès au serveur refusé"<?php
 }
 
 
