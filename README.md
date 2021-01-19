@@ -1,4 +1,4 @@
-![Codacy Security Scan](https://github.com/DevNathan/A2L_BackEnd/workflows/Codacy%20Security%20Scan/badge.svg)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) ![Codacy Security Scan](https://github.com/DevNathan/A2L_BackEnd/workflows/Codacy%20Security%20Scan/badge.svg)
 # A2L project : Serveur
 Voici le github de la partie BackEnd des applications A2L. 
 Le serveur sera codé en PHP et associé à du MySQL. 
