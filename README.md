@@ -1,3 +1,4 @@
+![Codacy Security Scan](https://github.com/DevNathan/A2L_BackEnd/workflows/Codacy%20Security%20Scan/badge.svg)
 # A2L project : Serveur
 Voici le github de la partie BackEnd des applications A2L. 
 Le serveur sera codé en PHP et associé à du MySQL. 
